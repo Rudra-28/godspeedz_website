@@ -7,10 +7,16 @@
   white-space: nowrap;
 }
 
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .inner {
   display: inline-flex;
   gap: 0;
   animation: ticker 20s linear infinite;
+  will-change: transform;
 }
 
 .item {
