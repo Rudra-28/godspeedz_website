@@ -124,7 +124,7 @@ export default function Waitlist() {
             <div className={styles.row}>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="wl-city">
-                  City <span className={styles.optional}>(optional)</span>
+                  City
                 </label>
                 <select
                   id="wl-city"
@@ -141,7 +141,7 @@ export default function Waitlist() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="wl-bike">
-                  Bike Brand <span className={styles.optional}>(optional)</span>
+                  Bike Brand
                 </label>
                 <select
                   id="wl-bike"
