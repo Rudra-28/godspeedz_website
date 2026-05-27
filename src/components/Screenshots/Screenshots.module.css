@@ -1,0 +1,239 @@
+.section {
+  padding: 60px 5% 48px;
+  background: var(--midnight);
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Scrollable row of phone cards ── */
+.grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--iron) transparent;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.grid::-webkit-scrollbar-thumb {
+  background: var(--iron);
+  border-radius: 2px;
+}
+
+/* ── Individual card ── */
+.card {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  scroll-snap-align: start;
+}
+
+/* ── Phone shell (CSS frame) ── */
+.phoneShell {
+  width: 280px;
+  background: var(--navy);
+  border: 1.5px solid var(--iron);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px rgba(58, 74, 107, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.notch {
+  height: 28px;
+  background: var(--midnight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-bottom: 0.5px solid var(--steel);
+}
+
+.notchPill {
+  width: 64px;
+  height: 8px;
+  background: var(--steel);
+  border-radius: 8px;
+}
+
+/* ── Image / placeholder area ── */
+.imageArea {
+  width: 100%;
+  /* 9:19.5 aspect — standard iPhone portrait */
+  aspect-ratio: 9 / 19.5;
+  overflow: hidden;
+  background: var(--midnight);
+  position: relative;
+}
+
+.screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: var(--midnight);
+}
+
+/* ── Placeholder (shown when no image is set) ── */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px dashed var(--iron);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--midnight),
+    var(--midnight) 8px,
+    var(--navy) 8px,
+    var(--navy) 16px
+  );
+  padding: 12px;
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 28px;
+  opacity: 0.5;
+}
+
+.placeholderLabel {
+  font-family: var(--font-condensed);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chrome);
+}
+
+.placeholderHint {
+  font-size: 10px;
+  color: var(--gunmetal);
+  line-height: 1.4;
+}
+
+.placeholderFile {
+  margin-top: 4px;
+}
+
+.placeholderFile code {
+  font-size: 9px;
+  color: var(--orange);
+  background: rgba(255, 77, 0, 0.08);
+  border: 0.5px solid rgba(255, 77, 0, 0.2);
+  border-radius: 3px;
+  padding: 2px 6px;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Home indicator bar ── */
+.homeIndicator {
+  height: 24px;
+  background: var(--midnight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.homeIndicator::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--iron);
+  border-radius: 4px;
+}
+
+/* ── Caption ── */
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.captionLabel {
+  font-family: var(--font-condensed);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.captionText {
+  font-size: 12px;
+  color: var(--gunmetal);
+  line-height: 1.4;
+  max-width: 180px;
+}
+
+/* ── Responsive ── */
+
+/* Wider cards on large screens — spread evenly */
+@media (min-width: 1200px) {
+  .card {
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 300px;
+  }
+
+  .phoneShell {
+    width: 100%;
+  }
+}
+
+/* Tablet — comfortably shows 3 */
+@media (max-width: 900px) {
+  .card {
+    flex: 0 0 240px;
+  }
+
+  .phoneShell {
+    width: 240px;
+  }
+}
+
+/* Mobile — show ~1.5 cards to hint scroll */
+@media (max-width: 480px) {
+  .grid {
+    gap: 16px;
+    margin-top: 32px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: -5%;
+    margin-right: -5%;
+  }
+
+  .card {
+    flex: 0 0 76vw;
+  }
+
+  .phoneShell {
+    width: 100%;
+  }
+}

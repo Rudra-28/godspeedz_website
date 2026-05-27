@@ -1,0 +1,231 @@
+.mockup {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.frame {
+  width: 280px;
+  background: var(--midnight);
+  border: 2px solid var(--iron);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 0 0 8px rgba(58, 74, 107, 0.2);
+  position: relative;
+}
+
+.notch {
+  height: 32px;
+  background: var(--midnight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid var(--steel);
+}
+
+.notchPill {
+  width: 80px;
+  height: 10px;
+  background: var(--steel);
+  border-radius: 10px;
+}
+
+.screen {
+  background: var(--midnight);
+}
+
+.topbar {
+  background: var(--midnight);
+  padding: 14px 16px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid var(--steel);
+}
+
+.topbarTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.notifBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.body {
+  padding: 12px;
+}
+
+.reminderCard {
+  background: var(--navy);
+  border: 0.5px solid var(--iron);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.reminderLabel {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gunmetal);
+  margin-bottom: 8px;
+}
+
+.reminderItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--steel);
+}
+
+.reminderItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rInfo {
+  flex: 1;
+}
+
+.rName {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.rDate {
+  font-size: 9px;
+  color: var(--gunmetal);
+  margin-top: 1px;
+}
+
+.rBadge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.statCard {
+  background: var(--navy);
+  border: 0.5px solid var(--iron);
+  border-radius: 8px;
+  padding: 9px 11px;
+}
+
+.statLabel {
+  font-size: 8px;
+  color: var(--gunmetal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1;
+}
+
+.statSub {
+  font-size: 9px;
+  color: var(--green);
+  margin-top: 2px;
+}
+
+.startBtn {
+  background: var(--orange);
+  border-radius: 8px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.qaBtn {
+  background: var(--navy);
+  border: 0.5px solid var(--iron);
+  border-radius: 8px;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.qaIcon {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.qaLabel {
+  font-size: 9px;
+  color: var(--chrome);
+}
+
+.phoneNav {
+  background: var(--navy);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 0.5px solid var(--steel);
+}
+
+.pnavItem {
+  text-align: center;
+}
+
+.pnavDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin: 0 auto 3px;
+}
+
+.pnavLabel {
+  font-size: 9px;
+}
+
+@media (max-width: 768px) {
+  .frame {
+    width: 240px;
+  }
+}

@@ -1,0 +1,129 @@
+/* ============================================================
+   GODSPEEDZ — Global Styles
+   ============================================================ */
+
+:root {
+  /* Backgrounds */
+  --midnight: #0A0F1A;
+  --navy: #131B2E;
+  --steel: #1D2A45;
+  --slate: #2A3A5C;
+  --iron: #3A4A6B;
+
+  /* Accent */
+  --orange: #FF4D00;
+  --ember: #CC3D00;
+  --hot-metal: #FF7A40;
+
+  /* Text */
+  --white: #FFFFFF;
+  --chrome: #C0C8D8;
+  --gunmetal: #6B7A99;
+
+  /* Status */
+  --green: #22C97A;
+  --amber: #F5A623;
+  --red: #FF3B30;
+  --blue: #007AFF;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--midnight);
+  color: var(--chrome);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ---- Utility ---- */
+.section-eyebrow {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--chrome);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 14px 24px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--hot-metal);
+}
+
+.btn-primary:active {
+  background: var(--ember);
+  transform: scale(0.98);
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Ticker animation ---- */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Pulse animation ---- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}

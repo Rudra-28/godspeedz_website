@@ -1,0 +1,245 @@
+.section {
+  background: var(--midnight);
+  border-top: 0.5px solid var(--iron);
+  border-bottom: 0.5px solid var(--iron);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 5%;
+}
+
+.desc {
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--chrome);
+}
+
+.required {
+  color: var(--orange);
+}
+
+.optional {
+  color: var(--gunmetal);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.input,
+.select {
+  background: var(--navy);
+  border: 0.5px solid var(--iron);
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input::placeholder {
+  color: var(--gunmetal);
+}
+
+.input:focus,
+.select:focus {
+  border-color: var(--orange);
+}
+
+.select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7A99' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.select option {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ── Radio group ── */
+.radioGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.radioLabel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  background: var(--navy);
+  border: 0.5px solid var(--iron);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--chrome);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.radioLabel:hover {
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.radioActive {
+  border-color: var(--orange);
+  background: rgba(255, 77, 0, 0.1);
+  color: var(--orange);
+}
+
+.radioInput {
+  display: none;
+}
+
+/* ── Error ── */
+.errorMsg {
+  font-size: 13px;
+  color: var(--red);
+  background: rgba(255, 59, 48, 0.08);
+  border: 0.5px solid rgba(255, 59, 48, 0.25);
+  border-radius: 4px;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+/* ── Submit ── */
+.submitBtn {
+  padding: 16px 32px;
+  font-size: 15px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ── Success ── */
+.successBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(34, 201, 122, 0.08);
+  border: 0.5px solid rgba(34, 201, 122, 0.3);
+  border-radius: 8px;
+  padding: 24px 28px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.successIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(34, 201, 122, 0.15);
+  border: 1px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.successText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.successText strong {
+  font-size: 18px;
+  color: var(--white);
+}
+
+.successText span {
+  font-size: 14px;
+  color: var(--chrome);
+}
+
+.position {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--chrome);
+}
+
+.positionNum {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+/* ── Perks ── */
+.perks {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--gunmetal);
+}
+
+.perkDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .perks {
+    gap: 14px;
+  }
+}
