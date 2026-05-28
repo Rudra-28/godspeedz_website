@@ -1,0 +1,134 @@
+.section {
+  padding: 80px 5%;
+  background: var(--navy);
+  border-top: 0.5px solid var(--iron);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative glow */
+.section::before {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(255, 77, 0, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ── Left text ── */
+.eyebrow {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-size: 16px;
+  color: var(--chrome);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── Right badges ── */
+.badgeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--midnight);
+  border: 0.5px solid var(--iron);
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 220px;
+  transition: border-color 0.2s, transform 0.15s;
+  cursor: default;
+}
+
+.badge:hover {
+  border-color: var(--orange);
+  transform: translateX(4px);
+}
+
+.badgeIcon {
+  color: var(--chrome);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.badgeSub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gunmetal);
+}
+
+.badgeName {
+  font-family: var(--font-condensed);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .badgeCol {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    flex: 1;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .badgeCol {
+    flex-direction: column;
+  }
+}

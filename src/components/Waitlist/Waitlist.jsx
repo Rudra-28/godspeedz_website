@@ -4,7 +4,7 @@ import { supabase } from '../../lib/supabase'
 import styles from './Waitlist.module.css'
 
 const CITIES = [
-  'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Pune',
+  'Mumbai', 'Thane', 'Delhi', 'Bangalore', 'Hyderabad', 'Pune',
   'Chennai', 'Kolkata', 'Ahmedabad', 'Jaipur', 'Surat',
   'Lucknow', 'Chandigarh', 'Indore', 'Bhopal', 'Nagpur',
   'Other',
